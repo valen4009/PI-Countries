@@ -6,7 +6,6 @@ const getCountriesById = async (id) => {
             { 
                 model: Activity,
                 attributes: ["name", "difficult", "duration", "season"],
-                through: { attributes: [] },
             }
         ]
     });

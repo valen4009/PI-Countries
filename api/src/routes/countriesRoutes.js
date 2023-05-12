@@ -19,15 +19,15 @@ countriesRoutes.get("/name", async (req, res) => {
         const { name } = req.query;
         const countries = await getCountryByName(name);
 
-    if(countries.length > 0) {
-        res.status(200).json(countries);
-      } else {
-        res.status(404).json({ message: 'No se encontraron países con ese nombre.' });
-      }
+        if(countries.length > 0) {
+            res.status(200).json(countries);
+        } else {
+            res.status(404).json({ message: 'No countries with that name were found' });
+        }
 
     } catch (error) {
         console.error(error);
-      res.status(500).send('Error al buscar países por nombre.');
+      res.status(500).send('Failed to search for countries by name');
     }
 });
 

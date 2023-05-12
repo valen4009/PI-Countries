@@ -5,13 +5,13 @@ const getAllActivities = require('../controllers/getAllActivities');
 
 activitiesRoutes.post("/", async (req, res) => {
     try {
-        const { id, name, difficult, duration, season } = req.body;
-        const newActivity = await postActivity({ 
-            id, 
+        const { name, difficult, duration, season, countryId } = req.body;
+        const newActivity = await postActivity({  
             name, 
             difficult, 
             duration, 
             season, 
+            countryId,
         });
         res.status(200).json(newActivity);
     } catch (error) {
@@ -24,7 +24,7 @@ activitiesRoutes.get("/", async(req, res) => {
         const response = await getAllActivities();
         res.status(200).json(response);
     } catch (error) {
-        console.log(error);
+        res.status(400).json({ error: error.message });
     }
 });
 

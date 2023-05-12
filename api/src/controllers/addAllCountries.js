@@ -10,9 +10,9 @@ const addCountry = async() => {
             return{
                 id: country.cca3,
                 name: country.name.common,
-                image: country.flags && country.flags.length > 0 ? country.flags[0] : null,
+                image: country.flags && country.flags.length > 0 ? country.flags[0] : "capital not found",
                 region: country.region,
-                capital: country.capital && country.capital.length > 0 ? country.capital[0] : null, 
+                capital: country.capital && country.capital.length > 0 ? country.capital[0] : "subregion not found", 
                 subregion: country.subregion,
                 area: country.area,
                 population: country.population,
