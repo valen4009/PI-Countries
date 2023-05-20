@@ -1,57 +1,16 @@
 import axios from "axios";
-import { GET_COUNTRIES, GET_COUNTRY_DETAIL, GET_COUNTRY_BY_NAME, GET_ACTIVITIES, ADD_ACTIVITY  } from "./actions-types";
+import { GET_COUNTRIES, GET_COUNTRY_DETAIL, GET_COUNTRY_BY_NAME, GET_ACTIVITIES, ADD_ACTIVITY, CHANGE_PAGE, ORDER_COUNTRIES, FILTER_BY_CONTINENT, FILTER_BY_ACTIVITY } from "./actions-types";
 
-const SERVER_URL = "https://localhost:3001";
+const SERVER_URL = "http://localhost:3001";
 
 export const getCountries = () => {
     return async (dispatch) => {
         try {
             const response = await axios.get(`${SERVER_URL}/countries`);
             const data = response.data;
-            const countries = data.map(country => {
-                return{
-                    id: country.id,
-                    name: country.name,
-                    flag: country.image,
-                    continent: country.region,
-                }
-            });
-            return dispatch({ type: GET_COUNTRIES, payload: countries });
+            return dispatch({ type: GET_COUNTRIES, payload: data });
         } catch (error) {
-            console.log(error);
-        };
-    };
-};
-
-export const getCountryDetail = (id) => {
-    return async (dispatch) => {
-        try {
-            const response = await axios.get(`${SERVER_URL}/countries/${id}`)
-            const data = response.data;
-            const country = data.map(country => {
-                return{
-                    id: country.id,
-                    name: country.name,
-                    flag: country.image,
-                    region: country.region,
-                    capital: country.capital,
-                    continent: country.subregion,
-                    area: country.area,
-                    population: country.population,
-                    activity: country.activity.map(activity => {
-                        return{
-                            id: activity.id,
-                            name: activity.name,
-                            difficult: activity.difficult,
-                            duration: activity.duration,
-                            season: activity.season,
-                        }
-                    }),
-                }
-            });
-            return dispatch({ type: GET_COUNTRY_DETAIL, PAYLOAD: country });
-        } catch (error) {
-            console.log(error);    
+            alert("this country has not been found")
         };
     };
 };
@@ -61,17 +20,21 @@ export const getCountryByName = (name) => {
         try {
             const response = await axios.get(`${SERVER_URL}/countries/name?name=${name}`);
             const data = response.data;
-            const countryName = data.map(country => {
-                return{
-                    id: country.id,
-                    name: country.name,
-                    flag: country.image,
-                    continent: country.region,
-                }
-            });
-            return dispatch({ type: GET_COUNTRY_BY_NAME, PAYLOAD: countryName });
+            return dispatch({ type: GET_COUNTRY_BY_NAME, payload: data });
         } catch (error) {
-            console.log(error);  
+            alert("this country has not been found")
+        };
+    };
+};
+
+export const getCountryDetail = (id) => {
+    return async (dispatch) => {
+        try {
+            const response = await axios.get(`${SERVER_URL}/countries/${id}`)
+            const data = response.data;
+            return dispatch({ type: GET_COUNTRY_DETAIL, payload: data });
+        } catch (error) {
+            console.log(error);
         };
     };
 };
@@ -81,16 +44,7 @@ export const getActivities = () => {
         try {
             const response = await axios.get(`${SERVER_URL}/activities`);
             const data = response.data;
-            const activities = data.map(activity => {
-                return{
-                    id: activity.id,
-                    name: activity.name,
-                    difficult: activity.difficult,
-                    duration: activity.duration,
-                    season: activity.season,
-                };
-            });
-            return dispatch({ type: GET_ACTIVITIES, PAYLOAD: activities });
+            return dispatch({ type: GET_ACTIVITIES, payload: data });
         } catch (error) {
             console.log(error);
         };
@@ -100,7 +54,7 @@ export const getActivities = () => {
 export const addActivity = (activityData) => {
     return async (dispatch) => {
         try {
-            const response = await axios.post(`${SERVER_URL}/activities`, activityData);
+            const response = await axios.post(`${SERVER_URL}/activities`, activityData); 
             const activity = response.data;
             return dispatch({ type: ADD_ACTIVITY, payload: activity });
         } catch (error) {
@@ -108,3 +62,31 @@ export const addActivity = (activityData) => {
         };
     };
 };
+
+export const changePage = (pageNumber) => {
+    return {
+      type: CHANGE_PAGE,
+      payload: pageNumber,
+    };
+};
+
+export const orderCountries = (orderOption) => {
+    return{
+        type: ORDER_COUNTRIES,
+        payload: {orderOption}
+    };
+};
+
+export const filterByContinent = (payload) => {
+    return{
+        type: FILTER_BY_CONTINENT,
+        payload,
+    }
+}
+
+export const filterByActivity = (activity) => {
+    return{
+        type: FILTER_BY_ACTIVITY,
+        payload: activity
+    }
+}

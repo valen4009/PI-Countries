@@ -8,11 +8,6 @@ const Nav = () => {
                     HOME
                 </p>
             </Link>
-            <Link to={"/About"}>
-                <p>
-                    ABOUT
-                </p>
-            </Link>
             <Link to={"/form"}>
                 <p>
                     ADD ACTIVITY

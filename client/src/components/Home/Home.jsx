@@ -1,11 +1,15 @@
+import Cards from "../Cards/Cards";
+import SearchBar from "../SearchBar/SearchBar";
+import FilterAndOrders from "../FiltersAndOrders/FiltersAndOrders";
 
 
 const Home = () => {
+
     return (
         <div>
-            <h1>Home</h1>
-            <p>Este es el home</p>
-            <hr/>
+            <SearchBar/>
+            <FilterAndOrders/>
+            <Cards/>
         </div>
     )
 }

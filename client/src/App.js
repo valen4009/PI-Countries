@@ -1,21 +1,30 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
-// import About from './components/About.jsx/About';
 import LandingPage from './components/LandingPage/LandingPage';
-// import Home from './components/Home/Home';
-import Cards from './components/Cards/Cards.jsx'
+import Home from './components/Home/Home';
+import Detail from './components/Detail/Detail';
+import Form from './components/Form/Form';
+import {  useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getCountries } from './Redux/actions';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCountries());
+  }, [dispatch])
+
   return (
     <div className="App">
       <Nav />
         <Routes>
           <Route path='/' element= {<LandingPage/>}/>
-          <Route path='/home' element= {<Cards/>}/>
-          <Route></Route>
-          <Route></Route>
-          <Route></Route>
+          <Route path='/home' element= {<Home/>}/>
+          <Route path='/:id' element= {<Detail/>}/>
+          <Route path='/form' element= {<Form/>}/>
+          <Route/>
         </Routes>
     </div>
   );
