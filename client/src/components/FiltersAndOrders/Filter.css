@@ -1,0 +1,65 @@
+.labelSort {
+    border-radius: 5px 0px 0px 5px;
+    background-color: rgb(34, 46, 110);
+    padding: 7px 0px 13px 5px;
+    font-style: oblique;
+    font-weight: bold;
+    border: none;
+    color: white;
+}
+
+.sort {  
+    border-radius: 0px 5px 5px 0px;
+    background-color: rgb(34, 46, 110);
+    padding: 8px 0px 12px 0px;
+    margin: 10px 10px 0px 0px;
+    font-size: 17px;
+    font-style: oblique;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.labelContinent {
+    border-radius: 5px 0px 0px 5px;
+    background-color: rgb(34, 46, 110);
+    padding: 7px 0px 13px 5px;
+    font-style: oblique;
+    font-weight: bold;
+    border: none;
+    color: white;
+}
+
+.continent {
+    border-radius: 0px 5px 5px 0px;
+    background-color: rgb(34, 46, 110);;
+    padding: 8px 0px 12px 0px;
+    margin: 10px 10px 0px 0px;
+    font-size: 17px;
+    font-style: oblique;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.labelActivity {
+    border-radius: 5px 0px 0px 5px;
+    background-color: rgb(34, 46, 110);
+    padding: 7px 0px 13px 5px;
+    font-style: oblique;
+    font-weight: bold;
+    border: none;
+    color: white;
+}
+
+.activity {
+    border-radius: 0px 5px 5px 0px;
+    background-color: rgb(34, 46, 110);
+    padding: 8px 0px 12px 0px;
+    margin: 10px 10px 0px 0px;
+    font-size: 17px;
+    font-style: oblique;
+    border: none;
+    cursor: pointer;
+    color: white;
+}

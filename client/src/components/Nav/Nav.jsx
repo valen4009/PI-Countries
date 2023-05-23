@@ -1,18 +1,34 @@
-import { Link } from "react-router-dom"
+import "./Nav.css"
+import { Link, useLocation } from "react-router-dom";
+import SearchBar from "../SearchBar/SearchBar";
 
 const Nav = () => {
+    const location = useLocation();
+    const HandleHomeClick = () => {
+        if(location.pathname !== "/home") { 
+            window.location.href = "/home"
+        }else {
+            window.location.reload()
+        };
+    }
+
     return(
-        <div>
-            <Link to={"/home"}>
-                <p>
+        <div className="nav">
+            <div className="buttons">
+            <Link to={"/home"} onClick={HandleHomeClick}>
+                <button className="buttonHome">
                     HOME
-                </p>
+                </button>
             </Link>
             <Link to={"/form"}>
-                <p>
+                <button className="buttonAct">
                     ADD ACTIVITY
-                </p>
+                </button>
             </Link>
+            </div>
+            <div className="search">
+                {location.pathname === "/home" && <SearchBar/>}
+            </div>
         </div>
     )
 };

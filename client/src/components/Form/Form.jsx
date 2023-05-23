@@ -1,7 +1,7 @@
 import { useState, useEffect, useLayoutEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addActivity, getActivities, getCountries } from "../../Redux/actions";
-import Multilist from "../Multilist/Multilist"
+import Checklist from "./Checklist/Checklist"
 import Validate from "./validate/Validate"; 
 
 const Form = () => {
@@ -83,7 +83,7 @@ const Form = () => {
                 </div>
                 <div>
                     <label htmlFor="countries">Countries: </label>
-                    <Multilist setInFormCountry={setInFormCountry}/>
+                    <Checklist setInFormCountry={setInFormCountry}/>
                     {errors.countries? <p>{errors.countries}</p> : <p></p>}
                 </div>
 

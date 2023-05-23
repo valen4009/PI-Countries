@@ -1,3 +1,4 @@
+import "./Filter.css"
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { orderCountries, filterByContinent, filterByActivity, getActivities } from "../../Redux/actions";
@@ -34,17 +35,17 @@ const FilterAndOrders = () => {
 
     return (
         <div>
-            
-            <select value={orderOption} onChange={handleOrderChange}>
-                <option value="">Sort by</option>
+            <label className="labelSort">Sort by: </label>
+            <select value={orderOption} onChange={handleOrderChange} className="sort">
+                <option value="">Sort</option>
                 <option value="name_asc">Name (A-Z)</option>
                 <option value="name_desc">Name (Z-A)</option>
                 <option value="population_desc">Population (higher to lower)</option>
                 <option value="population_asc">Population (lower to higher)</option>
             </select>
 
-            <select onChange={handlerFilterByContinent}>
-                <option value="all">select continent</option>
+            <label className="labelContinent">Filter by continent: </label>
+            <select onChange={handlerFilterByContinent} className="continent">
                 <option value="all">All</option>
                 <option value="Americas">Americas</option>
                 <option value="Europe">Europe</option>
@@ -54,13 +55,13 @@ const FilterAndOrders = () => {
                 <option value="Antarctic">Antarctic</option>
             </select> 
 
-            <select name="activity" value={selectActivity} onChange={handleActChange}>
-                <option value="all">select activity</option>
+            <label className="labelActivity">Filter by activity: </label>
+            <select name="activity" value={selectActivity} onChange={handleActChange} className="activity">
                 <option value="all">All</option>
-                {activities.map((activity) => (
-                    <option key={activity.id} value={activity.id}>
+                    {activities.map((activity) => (
+                <option key={activity.id} value={activity.id}>
                     {activity.name}
-                    </option>
+                </option>
                 ))}
             </select>
 

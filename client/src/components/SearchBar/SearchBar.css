@@ -1,0 +1,29 @@
+.searchBar input{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    padding: 8px;
+    border-radius: 10px;
+    font-style: oblique;
+    cursor: auto;
+    color: white;
+    background-color: rgb(34, 46, 110);
+}
+.searchBar input:hover{
+    box-shadow: 3px 3px 0px 0px rgb(162, 162, 162);
+}
+
+.searchBar button{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    padding: 8px;
+    border-radius: 10px;
+    margin: 5px; 
+    font-style: oblique;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(34, 46, 110);
+}
+.searchBar button:hover{
+    box-shadow: 3px 3px 0px 0px rgb(162, 162, 162);
+}

@@ -1,3 +1,4 @@
+import "./SearchBar.css"
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getCountryByName } from "../../Redux/actions"
@@ -22,7 +23,7 @@ const SearchBar = () => {
     };
 
     return(
-        <div>
+        <div className="searchBar">
             <input type="text" placeholder="Search..." onChange={handlerChange} onKeyDown={handleKeyDown}/>
             <button type="submit" onClick={() => submitHandler()}>Search</button>
         </div>

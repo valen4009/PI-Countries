@@ -1,14 +1,13 @@
+import "./Home.css"
 import Cards from "../Cards/Cards";
-import SearchBar from "../SearchBar/SearchBar";
 import FilterAndOrders from "../FiltersAndOrders/FiltersAndOrders";
 
-
 const Home = () => {
-
     return (
-        <div>
-            <SearchBar/>
-            <FilterAndOrders/>
+        <div className="home">
+            <div className="filters">
+                <FilterAndOrders/>
+            </div>
             <Cards/>
         </div>
     )

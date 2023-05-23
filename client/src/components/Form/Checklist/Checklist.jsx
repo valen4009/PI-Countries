@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getCountries } from "../../Redux/actions";
+import { getCountries } from "../../../Redux/actions";
 
-const Multilist = (props) => {
+const Checklist = (props) => {
     const dispatch = useDispatch();
     const allCountries = useSelector(state => state.countries);
     const [allCounts, setAllCounts] = useState(allCountries.map((item) => {return{...item, isChecked: false}}));
@@ -62,4 +62,4 @@ const Multilist = (props) => {
     )
 }
 
-export default Multilist;
+export default Checklist;

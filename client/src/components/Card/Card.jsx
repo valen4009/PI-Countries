@@ -1,20 +1,16 @@
+import "./Card.css"
 import { Link } from "react-router-dom";
 
 
 const Card = ({ id, name, image, region }) => {
     return(
-        <div>
-            <Link to={`/${id}`} className="name">
-                <h1>{name}</h1>
-            </Link>
-
-            <img src={image} alt="" className="flag" />
-
-            <div>
-                <h2>Country: {name}</h2>
-                <h2>Continent: {region}</h2>
+        <Link to={`/${id}`} className='linkDetail'>
+            <div className="card">
+                <img src={image} alt="" className="flag" />
+                <h1 className="card-title">{name}</h1>
+                <h1>{region}</h1>
             </div>
-        </div>
+        </Link>
     )
 }
 

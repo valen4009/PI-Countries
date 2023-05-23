@@ -1,0 +1,82 @@
+.CountryName {
+    font-size: 55px;
+    font-style: oblique;
+    margin: 70px 0px 0px 0px;
+    color: rgb(34, 46, 110);
+    text-decoration: underline;
+}
+
+.detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+}
+
+.CountryImg {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    float: left;
+    margin: 80px 0px 0px 0px;
+    width: 510px;
+    height: auto;
+    border: solid  rgb(34, 46, 110);
+    border-radius: 5px;
+}
+
+.CountryP {
+    margin: 83px 30px 0px 50px;
+    width: auto;
+    height: auto;
+    font-style: oblique;
+    text-align: justify;
+}
+
+.H2 {
+    margin: 10px 0px 10px 0px;
+    padding: 4px;
+    background-color: rgb(192, 224, 228);
+    color: rgb(34, 46, 110);
+    font-size: 24px;
+    padding-right: 10px;
+    border-radius: 5px;
+    border: solid rgb(34, 46, 110);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.b {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.Activity {
+    margin: 90px 30px 0px 0px;
+    width: auto;
+    height: auto;
+    text-align: justify;
+    font-style: oblique;
+}
+
+.actName {
+    text-decoration: underline;
+    text-align: center;
+    margin: 7px 0px 0px 0px;
+    color: rgb(34, 46, 110);
+}
+
+.h2act {
+    margin: 10px 0px 10px 0px;
+    padding: 4px;
+    background-color: rgb(192, 224, 228);
+    color: rgb(34, 46, 110);
+    font-size: 24px;
+    padding-right: 10px;
+    border-radius: 5px;
+    border: solid rgb(34, 46, 110);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+
+.bact {
+    font-size: 20px;
+    font-weight: 500;
+}
