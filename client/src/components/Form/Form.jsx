@@ -30,6 +30,7 @@ const Form = () => {
         });
     }
     
+    //SUBIR ACTIVIDAD Y DEJAR RESULTADOS POR DEFAULT
     const handleSubmit = (event) => {
         event.preventDefault();
         dispatch(addActivity(activity))

@@ -2,30 +2,39 @@ import "./Filter.css"
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { orderCountries, filterByContinent, filterByActivity, getActivities } from "../../Redux/actions";
+import { changePage } from "../../Redux/actions";
 
 
 const FilterAndOrders = () => {
     const dispatch = useDispatch(); 
     const [orderOption, setOrderOption] = useState('');
 
+    //ORDER
     const handleOrderChange = (event) => {
         const selectedOption = event.target.value;
         setOrderOption(selectedOption);
         dispatch(orderCountries(selectedOption));
+        dispatch(changePage(1));
     };
 
+    //FILTER BY CONTINENT
     const handlerFilterByContinent = (event) => {
         const continent = event.target.value;
         dispatch(filterByContinent(continent))
+        dispatch(changePage(1));
+        dispatch(orderCountries(orderOption));
     };
 
     const activities = useSelector((state) => state.activities);
     const [selectActivity, setSelectActivity] = useState("");
   
+    //FILTER ACTIVITY
     const handleActChange = (event) => {
         const activityId = event.target.value;
         setSelectActivity(activityId);
         dispatch(filterByActivity(activityId));
+        dispatch(changePage(1));
+        dispatch(orderCountries(orderOption));
     };
 
     useEffect(() => {

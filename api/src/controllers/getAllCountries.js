@@ -1,13 +1,3 @@
-// const { Country } = require('../db');
-
-// const getAllCountries = async() => {
-//     const countries = await Country.findAll();
-//     return countries;
-// }
-
-// module.exports = getAllCountries
-
-
 const { Country, Activity } = require('../db');
 
 const getAllCountries = async(req, res) => {

@@ -6,6 +6,7 @@ import Paginate from "../Paginate/Paginate";
 const Cards = () => {
     const countries = useSelector((state) => state.countries);
 
+    //PAGINADO
     const page = useSelector((state) => state.page);
     const itemsPerPage = 10;
     const start = (page - 1) * itemsPerPage;

@@ -1,5 +1,4 @@
 const axios = require('axios');
-const sequelize = require('sequelize');
 const { Country } = require('../db');
 const { API_URL } = process.env;
 

@@ -10,7 +10,6 @@ const SearchBar = () => {
 
     const handlerChange = (event) => {
         setName(event.target.value);
-        console.log(event.target.value);
     }
     
     const submitHandler = () => {
@@ -18,6 +17,7 @@ const SearchBar = () => {
         dispatch(changePage(1)) 
     }
 
+    //PARA USAR EL ENTER
     const handleKeyDown = (event) => {
         if (event.keyCode === 13) {
           submitHandler()
