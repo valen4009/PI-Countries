@@ -17,7 +17,7 @@ const FilterAndOrders = () => {
     const handlerFilterByContinent = (event) => {
         const continent = event.target.value;
         dispatch(filterByContinent(continent))
-    }
+    };
 
     const activities = useSelector((state) => state.activities);
     const [selectActivity, setSelectActivity] = useState("");

@@ -2,6 +2,7 @@ import "./SearchBar.css"
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getCountryByName } from "../../Redux/actions"
+import { changePage } from "../../Redux/actions";
 
 const SearchBar = () => {
     const dispatch = useDispatch()
@@ -14,6 +15,7 @@ const SearchBar = () => {
     
     const submitHandler = () => {
         dispatch(getCountryByName(name))
+        dispatch(changePage(1)) 
     }
 
     const handleKeyDown = (event) => {

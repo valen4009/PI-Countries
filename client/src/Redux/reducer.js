@@ -69,7 +69,7 @@ const reducer = (state = initialState, { type, payload }) => {
                 }
             return {
                 ...state,
-                countries: orderCountries
+                countries: orderCountries,
             };
         case FILTER_BY_CONTINENT:
             const continent = payload
