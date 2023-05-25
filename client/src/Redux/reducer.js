@@ -87,12 +87,6 @@ const reducer = (state = initialState, { type, payload }) => {
                 ...state, 
                 countries: filterCountries
             };
-            // const activity = payload
-            // const filterCountries = state.countries.filter(country => country.Activities.length && country.Activities.some(act => act.id === Number(activity)))
-            // return {
-            //     ...state, 
-            //     countries: filterCountries
-            // };
             default:
                 return{
                     ...state,

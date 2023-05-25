@@ -10,7 +10,7 @@
 
 // module.exports = getAllActivities;
 
-const { Activity, Country } = require('../db');
+const { Activity } = require('../db');
 
 const getAllActivities = async(req, res) => {
     try {

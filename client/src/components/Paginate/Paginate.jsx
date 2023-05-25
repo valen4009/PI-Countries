@@ -1,3 +1,4 @@
+import "./Paginate.css"
 import { useDispatch, useSelector } from "react-redux";
 import { changePage } from "../../Redux/actions"
 
@@ -12,18 +13,18 @@ const Paginate = () => {
     }
 
     return (
-        <div>
+        <div className="paginate">
             { page > 1 ? 
                 <>
                     <button onClick={() => handleChange(page - 1)}>🡸</button>
-                    <label>{page - 1}-</label>
+                    <label className="prev">{page - 1}</label>
                 </> 
              : null
             }
-            <label>{page}</label>
+            <label className="in">{page}</label>
             { page < totalPages ? 
                 <>
-                    <label>-{page + 1}</label>
+                    <label className="next">{page + 1}</label>
                     <button onClick={() => handleChange(page + 1)}>🡺</button>
                 </> 
              : null

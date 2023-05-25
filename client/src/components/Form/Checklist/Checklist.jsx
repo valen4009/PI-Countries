@@ -1,3 +1,4 @@
+import "./CheckList.css"
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getCountries } from "../../../Redux/actions";
@@ -41,21 +42,20 @@ const Checklist = (props) => {
     const filterName = allCounts.filter(country => country.name.toLowerCase().includes(search));
     
     return(
-        <div>
-            <div>
+        <div className="checkSelect">
+            <div className="selectBox">
+                {/* <label className="countries" htmlFor="countries">Countries: </label> */}
                 <input type="search" placeholder="Search Countries" onChange={changeSearchValue} value={search}/>
-                <label onClick={changeExpanded}>⊽</label>
+                <label className="arrow" onClick={changeExpanded}>⊽</label>
             </div>
             {expanded && (
             <div id="checkboxes">
-            <li>
                 {filterName.map(country => 
                 <label key={country.id}>
                     <input type="checkbox" name={country.name} checked={country.isChecked} onChange={changeIsChecked}/>
                     {country.name.split(', ')}
                 </label>
                 )}
-            </li>
             </div>
             )}
         </div>

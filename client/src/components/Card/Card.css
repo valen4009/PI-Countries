@@ -14,10 +14,12 @@
     overflow: hidden;
     font-style: oblique;
     border: 3px solid rgb(34, 46, 110);
+    transition: transform 0.3s ease;
 }
 
 .card:hover{
     box-shadow: 0px 0px 3px 3px rgb(162, 162, 162);
+    transform: scale(1.1);
 }
 
 .card img {

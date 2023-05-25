@@ -1,3 +1,4 @@
+import "./Form.css"
 import { useState, useEffect, useLayoutEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addActivity, getActivities, getCountries } from "../../Redux/actions";
@@ -58,36 +59,51 @@ const Form = () => {
     return (
         <div>
             <form onSubmit={handleSubmit} className="form">
-                <h1>Create a tourist activity</h1>
+                <h1 className="title">Create a tourist activity</h1>
                 <div>
-                    <label htmlFor="name">Name: </label>
-                    <input type="text" placeholder="name..." name="name" value={activity.name} onChange={handleChange} />
+                    <div>
+                        <label htmlFor="name">Name: </label>
+                    </div>
+                    <input className="input" type="text" placeholder="name..." name="name" value={activity.name} onChange={handleChange} />
                     {errors.name? <p>{errors.name}</p> : <p></p>}
                 </div>
                 <div>
-                    <label htmlFor="difficult">Difficult: </label>
-                    <input type="number" placeholder="difficult..." name="difficult" value={activity.difficult} onChange={handleChange} />
+                    <div>
+                        <label htmlFor="difficult">Difficult: </label>
+                    </div>
+                    <input className="input" type="number" placeholder="difficult..." name="difficult" value={activity.difficult} onChange={handleChange} />
                     {errors.difficult? <p>{errors.difficult}</p> : <p></p>}
                 </div>
                 <div>
-                    <label htmlFor="duration">Duration: </label>
-                    <input type="number" placeholder="duration in hours..." name="duration" value={activity.duration} onChange={handleChange} />
-                    <span> hours</span>
+                    <div>   
+                        <label htmlFor="duration">Duration: </label>
+                    </div>
+                    <input className="hs" type="number" placeholder="duration in hours..." name="duration" value={activity.duration} onChange={handleChange} />
+                    <span> hs</span>
                     {errors.duration? <p>{errors.duration}</p> : <p></p>}
                 </div>
                 <div>
-                    <label htmlFor="season">Season: </label>
-                    <input type="text" placeholder="season..." name="season" value={activity.season} onChange={handleChange} />
-                    <span> (summer, autumn, winter or spring)</span>
+                    <div>
+                        <label htmlFor="season">Season: </label>
+                    </div>
+                    <select name="season" value={activity.season} onChange={handleChange}>
+                        <option>Select season</option>
+                        <option value="winter">Winter</option>
+                        <option value="spring">Spring</option>
+                        <option value="summer">Summer</option>
+                        <option value="autumn">Autumn</option>
+                    </select>
                     {errors.season? <p>{errors.season}</p> : <p></p>}
                 </div>
                 <div>
-                    <label htmlFor="countries">Countries: </label>
+                    <div>
+                            <label htmlFor="countries">Countries: </label>
+                    </div>
                     <Checklist setInFormCountry={setInFormCountry}/>
                     {errors.countries? <p>{errors.countries}</p> : <p></p>}
                 </div>
 
-                <button type="submit">Create</button>
+                <button disabled={errors.name || errors.difficult || errors.duration || errors.season || errors.countries} type="submit">Create</button>
 
             </form>            
         </div>

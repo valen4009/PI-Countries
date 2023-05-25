@@ -1,5 +1,5 @@
-const axios = require('axios');
-const sequelize = require('sequelize');
+// const axios = require('axios');
+// const sequelize = require('sequelize');
 const { Activity, Country } = require('../db');
 
 const postActivity = async (req, res) => {

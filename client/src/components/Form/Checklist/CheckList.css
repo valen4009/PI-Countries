@@ -1,0 +1,61 @@
+.checkSelect {
+    width: auto;
+    height: auto;
+}
+
+.selectBox {
+    margin-top: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.selectBox input {
+    align-content: center;
+    padding: 5px;
+    border-radius: 10px 0px 0px 10px;
+    margin-top: 2px;
+    width: 200px;
+    height: 33px;
+    font-weight: bold;
+    border: solid 2px rgb(34, 46, 110);
+}
+
+.arrow {
+    padding: 0px;
+    width: 15px;
+    height: 29px;
+    display: inline-block;
+    background-color: white;
+    text-align: center;
+    border-radius: 0px 10px 10px 0px;
+    color: black;
+    border: solid 2px rgb(34, 46, 110);
+    cursor: pointer;
+}
+
+.countries {
+    width: 15px;
+    height: auto;
+}
+
+#checkboxes {
+    margin: auto;
+    width: 215px;
+    height: 200px;
+    display: block;
+    text-align: left;
+    overflow-y: scroll;
+    z-index: 1;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#checkboxes label {
+    display: block;
+}
+
+#checkboxes label:hover {
+    background-color: rgb(192, 224, 228);
+}

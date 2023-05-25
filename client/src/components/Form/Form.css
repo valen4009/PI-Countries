@@ -1,0 +1,85 @@
+.form {
+    margin: auto;
+    width: 400px;
+    margin-top: 50px;
+    padding: 15px;
+    margin-bottom: 100px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgb(192, 224, 228);
+    height: auto;
+    border: solid 3px rgb(34, 46, 110);
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
+}
+
+.form h1 {
+    margin-top: 0px ;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: rgb(34, 46, 110);
+}
+
+.form label {
+    font-size: 18px;
+    color: rgb(34, 46, 110);
+    font-weight: 600;
+}
+
+.form div {
+    display: block;
+}
+
+.input {
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 200px;
+    height: 20px;
+    font-weight: bold;
+    border: solid 2px rgb(34, 46, 110);
+}
+
+.hs {
+    margin-left: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 200px;
+    height: 20px;
+    font-weight: bold;
+}
+
+.form select {
+    padding: 4px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 215px;
+    height: 33px;
+    border: solid 2px rgb(34, 46, 110);
+    cursor: pointer;
+}
+
+.form p {
+    margin: 0px 0px 30px 0px;
+    color: red;
+}
+
+.form button {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    padding: 8px;
+    border-radius: 10px;
+    margin-left: 15px;
+    font-style: oblique;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(34, 46, 110);
+}
+
+.form span {
+    font-weight: 500;
+}
